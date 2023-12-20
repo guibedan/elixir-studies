@@ -1,0 +1,14 @@
+def exer04() do
+
+    IO.puts("Lendo arquivo...")
+    # file
+    case File.read("./open.txt") do
+      {:ok, file} -> {
+        IO.puts("Arquivo lido com sucesso!"),
+        File.mkdir("./tmp"),
+        File.copy!(file.pwd(), "./tmp/text.txt")
+      }
+      {:error, reason} -> IO.puts(reason)
+    end
+
+  end
